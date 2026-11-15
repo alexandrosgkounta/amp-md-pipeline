@@ -1,0 +1,35 @@
+# Experimental data.
+# You have chosen to publish the melittin measurements, so they are NOT ignored.
+# To withhold them instead, uncomment the next line:
+# data/hdx/*_observed.csv
+# !data/hdx/*_observed.example.csv
+
+# Local registry (copy systems.example.tsv to systems.tsv and edit)
+systems.tsv
+
+# Trajectories and simulation output
+*.xtc
+*.trr
+*.tpr
+*.edr
+*.cpt
+*.gro
+*.ndx
+*.log
+processed/
+analysis/
+figures/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Editor and OS
+*.swp
+*.bak
+*.bak_v*
+.DS_Store
+._*

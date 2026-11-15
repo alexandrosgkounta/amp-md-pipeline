@@ -1,0 +1,28 @@
+# AMP simulation registry. One row per trajectory. Tab separated.
+# dir is relative to the amp_simulations root folder.
+# xtc   = the RAW production trajectory (replace the *_test names with the full files).
+# whole = 1 if the xtc was already treated with trjconv -pbc whole, else 0.
+# kind  = solution | membrane | aggregation
+# replicate: the four extra POPC orientations go in as mel_popc with replicate r2..r5
+sys_id	peptide	condition	replicate	kind	n_pep	dir	tpr	xtc	whole
+mel_sol	mel	solution	r1	solution	1	mel/01_mel_solution	md.tpr	md.xtc	0
+mel_popc	mel	popc	r1	membrane	1	mel/02_mel_popc	md.tpr	01_whole.xtc	1
+mel_pepg	mel	pepg	r1	membrane	1	mel/03_mel_anionic	md.tpr	md.xtc	0
+mel_pcpepg	mel	pcpepg	r1	membrane	1	mel/04_mel_mode_anionic/R1.	step7.tpr	md.xtc	0
+mel_agg	mel	agg_popc	r1	aggregation	4	mel/05_mel_aggregation	step7.tpr	md.xtc	0
+ll37_sol	ll37	solution	r1	solution	1	ll37/01_ll37_solution	md.tpr	md.xtc	0
+ll37_popc	ll37	popc	r1	membrane	1	ll37/02_ll37_popc	md.tpr	md.xtc	0
+ll37_pepg	ll37	pepg	r1	membrane	1	ll37/03_ll37_anionic	md.tpr	01_whole.xtc	1
+ll37_pcpepg	ll37	pcpepg	r1	membrane	1	ll37/04_ll37_moderately_anionic	md.tpr	md.xtc	0
+ll37_agg	ll37	agg_popc	r1	aggregation	4	ll37/05_ll37_aggregation	step7.tpr	md.xtc	0
+# POPC starting-orientation replicates (CHARMM-GUI builds), processed on the Mac with process_all_local.sh (0 to 1 us)
+mel_popc_r2	mel	popc	r2	membrane	1	mel/06_popc_r2_opposite	step7.tpr	step7.xtc	0
+mel_popc_r3	mel	popc	r3	membrane	1	mel/07_popc_r3_tilt45	step7.tpr	step7.xtc	0
+mel_popc_r4	mel	popc	r4	membrane	1	mel/08_popc_r4_tiltm45	step7.tpr	step7.xtc	0
+mel_popc_r5	mel	popc	r5	membrane	1	mel/09_popc_r5_opposite_end	step7.tpr	step7.xtc	0
+ll37_popc_r2	ll37	popc	r2	membrane	1	ll37/06_popc_r2_opposite	step7.tpr	step7.xtc	0
+ll37_popc_r3	ll37	popc	r3	membrane	1	ll37/07_popc_r3_tilt	step7.tpr	step7.xtc	0
+ll37_popc_r4	ll37	popc	r4	membrane	1	ll37/08_popc_r4_tiltm40	step7.tpr	step7.xtc	0
+ll37_popc_r5	ll37	popc	r5	membrane	1	ll37/09_popc_r5_reverse_end	step7.tpr	step7.xtc	0
+# Lower-temperature runs (melittin 300 K, LL-37 313 K), processed on the external drive (mel_additional)
+mel_coil300	mel	coil_300K	r1	solution	1	mel/10_mel_coil_300K/A	step5_production.tpr	step5_production.xtc	0

@@ -1,0 +1,3 @@
+# Systems analysed beyond END_NS (default 1000 ns). Add a line ONLY when analysis/extension_check_<pep>.md
+# says the run needs it; the reason column is the justification for Methods.
+sys_id	end_ns	reason
